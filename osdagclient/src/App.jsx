@@ -7,6 +7,7 @@ import {
   RouterProvider,
   Navigate,
   useNavigate,
+  useParams,
 } from 'react-router-dom';
 import { Worker } from '@react-pdf-viewer/core';
 
@@ -14,6 +15,7 @@ import Sidebar from './components/Sidebar';
 import Mainwindow from './components/Mainwindow';
 import Window from './components/Window';
 import FinePlate from './components/shearConnection/FinePlate';
+import CleatAngle from './components/shearConnection/CleatAngle';
 import { GlobalProvider } from './context/GlobalState';
 import { ModuleProvider } from './context/ModuleState';
 import { UserContext, UserProvider } from './context/UserState';
@@ -42,24 +44,39 @@ function App() {
   } , [isLoggedIn])
 
 
+  // const router = createBrowserRouter(
+  //   createRoutesFromElements(
+  //     <Route path="/" element={<Root loggedIn={loggedIn} />}>
+  //       <Route path="/home" element={<Mainwindow />} />
+  //       <Route path="/" element={<LoginPage />} />
+  //       <Route path='/design-type/:designType' element={<Window />} />
+  //       {/* Wrap FinePlate with a route that checks authentication */}
+  //       <Route
+  //         path='/design/:designType/:item'
+  //         element={
+  //            <FinePlate />
+  //         }
+  //       />
+  //     <Route path='/user' element={<UserAccount />} />
+  //     </Route>
+      
+  //   )
+  // );
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root loggedIn={loggedIn} />}>
         <Route path="/home" element={<Mainwindow />} />
         <Route path="/" element={<LoginPage />} />
         <Route path='/design-type/:designType' element={<Window />} />
-        {/* Wrap FinePlate with a route that checks authentication */}
-        <Route
-          path='/design/:designType/:item'
-          element={
-             <FinePlate /> 
-          }
-        />
-      <Route path='/user' element={<UserAccount />} />
+        <Route path='/design/:designType/:item' element={<DesignPage />} />
+        
+        
+        <Route path='/user' element={<UserAccount />} />
       </Route>
-      
     )
   );
+  
 
   return (
     <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js'>
@@ -134,5 +151,11 @@ const Root = ( loggedIn ) => {
     </>
   );
 };
+
+const DesignPage = () => {
+  const { item } = useParams();
+  return item === 'fin_plate' ? <FinePlate /> : item === 'cleat_angle' ? <CleatAngle /> : <div>Component not found</div>;
+};
+
 
 export default App;
