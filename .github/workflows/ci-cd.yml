@@ -45,9 +45,9 @@ jobs:
 
       - name: Set up Docker Compose
         run: |
-          sudo curl -L "https://github.com/docker/compose/releases/download/v2.30.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker compose
-          sudo chmod +x /usr/local/bin/docker compose
-          docker compose --version
+          sudo curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose   
+          docker-compose --version 
 
       - name: Pull backend Docker image
         run: docker pull eeshuyadav/osdag-web-backend:v1.0
