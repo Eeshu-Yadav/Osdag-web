@@ -28,11 +28,15 @@ services:
   db:
     image: postgres:14
     environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: mydb
+      # POSTGRES_USER: myuser
+      # POSTGRES_PASSWORD: mypassword
+      # POSTGRES_DB: mydb
+
+      POSTGRES_USER: osdagdeveloper
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres_Intg_osdag
     ports:
-      - "5432:5432"
+      - "5434:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
