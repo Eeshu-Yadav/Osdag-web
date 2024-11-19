@@ -26,6 +26,7 @@ import LoginPage from './components/userAuth/LoginPage';
 
 // jwt imports 
 import jwt_decode from 'jwt-decode';
+import EndPlate from './components/shearConnection/EndPlate';
 
 let renderedOnce = false
 
