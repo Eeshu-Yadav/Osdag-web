@@ -73,8 +73,8 @@ jobs:
       - name: Update sequences
         run: docker-compose exec backend bash -c "source /opt/miniconda/etc/profile.d/conda.sh && conda activate myenv && python update_sequences.py"
 
-      # - name: Run tests
-      #   run: docker-compose exec backend bash -c "source /opt/miniconda/etc/profile.d/conda.sh && conda activate myenv && pytest"
+      - name: Run tests
+        run: docker-compose exec backend bash -c "source /opt/miniconda/etc/profile.d/conda.sh && conda activate myenv && pytest"
 
       - name: Stop services (check if needed for later jobs)
         run: docker-compose down
