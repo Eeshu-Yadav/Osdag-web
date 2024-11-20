@@ -15,7 +15,7 @@ jobs:
     services:
       db:
         # image: postgres:14
-        image: eeshuyadav/postgres:v1.0
+        image: eeshuyadav/postgres:v1.1
         ports:
           - 5432:5432
         env:
@@ -50,10 +50,10 @@ jobs:
           docker-compose --version 
 
       - name: Pull backend Docker image
-        run: docker pull eeshuyadav/osdag-web-backend:v1.0
+        run: docker pull eeshuyadav/osdag-web-backend:v1.1
 
       - name: Pull frontend Docker image
-        run: docker pull eeshuyadav/osdag-web-frontend:v1.0
+        run: docker pull eeshuyadav/osdag-web-frontend:v1.1
 
       - name: Start backend and frontend services
         run: docker-compose up -d

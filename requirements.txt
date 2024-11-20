@@ -198,4 +198,4 @@ urllib3==1.25.8
 webencodings==0.5.1
 wrapt==1.15.0
 XlsxWriter==1.2.8
-pytest==8.3.3
+pytest==7.4.3
