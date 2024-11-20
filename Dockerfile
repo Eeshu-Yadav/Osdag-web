@@ -9,7 +9,6 @@ RUN apt update && \
     mkdir -p /snap/bin && \
     ln -s /usr/bin/freecad /snap/bin/freecad.cmd
 
-
 RUN mkdir -p /opt/conda && \
     wget https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.2-Linux-x86_64.sh -O /opt/conda/miniconda.sh && \
     bash /opt/conda/miniconda.sh -b -p /opt/miniconda && \

@@ -76,5 +76,5 @@ jobs:
       - name: Run tests
         run: docker-compose exec backend bash -c "source /opt/miniconda/etc/profile.d/conda.sh && conda activate myenv && pytest"
 
-      - name: Stop services (check if needed for later jobs)
+      - name: Stop services
         run: docker-compose down
