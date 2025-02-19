@@ -9,6 +9,10 @@ RUN apt update && \
     mkdir -p /snap/bin && \
     ln -s /usr/bin/freecad /snap/bin/freecad.cmd
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3b45bbd3f17894acd9f895a4a3779ea222e8f4cf
 RUN mkdir -p /opt/conda && \
     wget https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.2-Linux-x86_64.sh -O /opt/conda/miniconda.sh && \
     bash /opt/conda/miniconda.sh -b -p /opt/miniconda && \
@@ -45,7 +49,10 @@ COPY . /app
 
 RUN bash -c "source /opt/miniconda/etc/profile.d/conda.sh && \
     conda activate myenv && \
+<<<<<<< HEAD
     pip install --upgrade pip setuptools && \
+=======
+>>>>>>> 3b45bbd3f17894acd9f895a4a3779ea222e8f4cf
     pip install -r requirements.txt"
 
 ENV LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6

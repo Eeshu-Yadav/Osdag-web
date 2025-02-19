@@ -227,7 +227,13 @@ const [selectedItemBack, setSelectedItemBack] = useState(null);
 
                             </div>
                             <center><div className=''><button className='start-btn' onClick={() => {
+<<<<<<< HEAD
                                 if (selectedDesign === 'fin_plate' || 'end_plate') navigate(`/design/${designType}/${selectedDesign}`)
+=======
+                                
+                                if (selectedDesign === 'fin_plate' || 'end_plate') navigate(`/design/${designType}/${selectedDesign}`)
+                                
+>>>>>>> 3b45bbd3f17894acd9f895a4a3779ea222e8f4cf
                             }}>Start</button></div></center>
                         </>
                     }

@@ -53,6 +53,7 @@ function App() {
         {/* Wrap FinePlate with a route that checks authentication */}
         <Route
           path='/design/:designType/fin_plate'
+<<<<<<< HEAD
           element={
              <FinePlate /> 
           }
@@ -65,8 +66,16 @@ function App() {
         />
         <Route
           path='/design/:designType/fin_plate'
+=======
+>>>>>>> 3b45bbd3f17894acd9f895a4a3779ea222e8f4cf
           element={
              <FinePlate /> 
+          }
+        />
+        <Route
+          path='/design/:designType/end_plate'
+          element={
+             <EndPlate /> 
           }
         />
       <Route path='/user' element={<UserAccount />} />

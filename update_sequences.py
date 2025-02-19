@@ -8,7 +8,10 @@ from psycopg2 import sql
 
 conn = psycopg2.connect(database='mydb', host='db',
                         user='myuser', password='mypassword', port='5432')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b45bbd3f17894acd9f895a4a3779ea222e8f4cf
 cursor = conn.cursor()
 file = open("ResourceFiles/Database/update_sequences.sql", "r+")
 
