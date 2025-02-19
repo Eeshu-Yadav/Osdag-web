@@ -2,10 +2,10 @@ version: '3'
 
 services:
   backend:
-    image: eeshuyadav/osdag-web-backend:v1.1
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
+    # image: eeshuyadav/osdag-web-backend:v1.1
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     volumes:
@@ -15,10 +15,10 @@ services:
   
   frontend:
 
-    image: eeshuyadav/osdag-web-frontend:v1.1
-    # build:
-    #   context: ./osdagclient
-    #   dockerfile: Dockerfile
+    # image: eeshuyadav/osdag-web-frontend:v1.1
+    build:
+      context: ./osdagclient
+      dockerfile: Dockerfile
     ports:
       - "5173:5173" 
     volumes:
@@ -29,16 +29,12 @@ services:
 
 
   db:
-    # image: postgres:14
-    image: eeshuyadav/postgres:v1.1
+    image: postgres:14
+    # image: eeshuyadav/postgres:v1.1
     environment:
-      # POSTGRES_USER: myuser
-      # POSTGRES_PASSWORD: mypassword
-      # POSTGRES_DB: mydb
-
-      POSTGRES_USER: osdagdeveloper
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: postgres_Intg_osdag
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
     ports:
       - "5434:5432"
     volumes:

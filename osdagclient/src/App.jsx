@@ -44,37 +44,34 @@ function App() {
     console.log('isLogged in useEffect : ' , isLoggedIn)
   } , [isLoggedIn])
 
-
-  // const router = createBrowserRouter(
-  //   createRoutesFromElements(
-  //     <Route path="/" element={<Root loggedIn={loggedIn} />}>
-  //       <Route path="/home" element={<Mainwindow />} />
-  //       <Route path="/" element={<LoginPage />} />
-  //       <Route path='/design-type/:designType' element={<Window />} />
-  //       {/* Wrap FinePlate with a route that checks authentication */}
-  //       <Route
-  //         path='/design/:designType/:item'
-  //         element={
-  //            <FinePlate />
-  //         }
-  //       />
-  //     <Route path='/user' element={<UserAccount />} />
-  //     </Route>
-      
-  //   )
-  // );
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root loggedIn={loggedIn} />}>
         <Route path="/home" element={<Mainwindow />} />
         <Route path="/" element={<LoginPage />} />
         <Route path='/design-type/:designType' element={<Window />} />
-        <Route path='/design/:designType/:item' element={<DesignPage />} />
-        
-        
-        <Route path='/user' element={<UserAccount />} />
+        {/* Wrap FinePlate with a route that checks authentication */}
+        <Route
+          path='/design/:designType/fin_plate'
+          element={
+             <FinePlate /> 
+          }
+        />
+        <Route
+          path='/design/:designType/end_plate'
+          element={
+             <EndPlate /> 
+          }
+        />
+        <Route
+          path='/design/:designType/fin_plate'
+          element={
+             <FinePlate /> 
+          }
+        />
+      <Route path='/user' element={<UserAccount />} />
       </Route>
+      
     )
   );
   

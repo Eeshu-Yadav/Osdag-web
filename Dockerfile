@@ -45,6 +45,7 @@ COPY . /app
 
 RUN bash -c "source /opt/miniconda/etc/profile.d/conda.sh && \
     conda activate myenv && \
+    pip install --upgrade pip setuptools && \
     pip install -r requirements.txt"
 
 ENV LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6

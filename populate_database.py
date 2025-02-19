@@ -6,11 +6,9 @@ from psycopg2 import sql
 #########################################################
 
 
-# conn = psycopg2.connect(database='mydb', host='db',
-#                         user='myuser', password='mypassword', port='5432')
+conn = psycopg2.connect(database='mydb', host='db',
+                        user='myuser', password='mypassword', port='5432')
 
-conn = psycopg2.connect(database='postgres_Intg_osdag', host='db',
-                        user='osdagdeveloper', password='password', port='5432')
 
 cursor = conn.cursor()
 file = open("ResourceFiles/Database/postgres_Intg_osdag.sql", "r+")

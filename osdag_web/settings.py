@@ -162,12 +162,9 @@ WSGI_APPLICATION = 'osdag_web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'mydb',
-        'NAME': 'postgres_Intg_osdag',
-        # 'USER': 'myuser',
-        'USER': 'osdagdeveloper',
-        # 'PASSWORD': 'mypassword',
-        'PASSWORD': 'password',
+        'NAME': 'mydb',
+        'USER': 'myuser',
+        'PASSWORD': 'mypassword',
         'HOST': 'db',  # This should be the name of the service
         'PORT': '5432',
     }
